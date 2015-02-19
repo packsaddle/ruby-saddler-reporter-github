@@ -1,9 +1,11 @@
 require 'saddler/reporter/github/version'
+require 'saddler/reporter/github/commit_comment'
+require 'saddler/reporter/github/issue_comment'
+require 'saddler/reporter/github/pull_request_review_comment'
 
 module Saddler
   module Reporter
     module Github
-      # Your code goes here...
     end
   end
 end
