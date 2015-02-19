@@ -1,4 +1,4 @@
-require "saddler/reporter/github/version"
+require 'saddler/reporter/github/version'
 
 module Saddler
   module Reporter
