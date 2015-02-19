@@ -11,6 +11,7 @@ module Saddler
           sha1 = options[:sha1]
           data = parse(messages)
 
+          # build comment
           comment = build_comment(data)
 
           # fetch commit_comments
