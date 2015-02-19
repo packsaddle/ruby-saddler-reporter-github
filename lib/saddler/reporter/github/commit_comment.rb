@@ -53,7 +53,7 @@ module Saddler
             errors.each do |error|
               severity = error['@severity'] && error['@severity'].upcase
               message = error['@message']
-              buffer << "#{severity}: #{message}"
+              buffer << [severity, message].compact.join(': ')
             end
           end
           buffer.join("\n")
