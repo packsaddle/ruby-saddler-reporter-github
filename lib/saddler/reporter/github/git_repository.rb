@@ -28,6 +28,10 @@ module Saddler
           @git.current_branch
         end
 
+        def head
+          @git.object('HEAD')
+        end
+
         def strip_git_extension(name)
           match = /\A(?<identity>.*?)(?:\.git)?\z/.match(name)
           match[:identity] if match
