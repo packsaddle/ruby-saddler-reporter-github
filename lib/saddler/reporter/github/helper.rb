@@ -19,4 +19,3 @@ module Saddler
     end
   end
 end
-
