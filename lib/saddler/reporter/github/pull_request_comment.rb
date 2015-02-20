@@ -7,8 +7,7 @@ module Saddler
         end
 
         # https://developer.github.com/v3/issues/comments/#create-a-comment
-        def report(messages, _options)
-
+        def report(_messages, _options)
         end
       end
     end
