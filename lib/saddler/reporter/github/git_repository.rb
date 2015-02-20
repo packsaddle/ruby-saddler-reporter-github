@@ -29,6 +29,7 @@ module Saddler
           match[:identity] if match
         end
 
+        # FIXME: if endpoint set, this return wrong result
         def github_domain
           github_api_endpoint
             .split('.')
