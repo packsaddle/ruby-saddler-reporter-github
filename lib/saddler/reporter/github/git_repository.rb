@@ -24,6 +24,10 @@ module Saddler
             .map { |branch| branch.remote.url }
         end
 
+        def current_branch
+          @git.current_branch
+        end
+
         def strip_git_extension(name)
           match = /\A(?<identity>.*?)(?:\.git)?\z/.match(name)
           match[:identity] if match
