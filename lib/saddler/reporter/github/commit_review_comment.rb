@@ -47,7 +47,7 @@ module Saddler
               message = error['@message']
               position = patch.find_patch_position_by_line_number(line_no)
 
-              comments << Comment.new(sha, [severity, message].compact.join(': '), patch.file, position)
+              comments << Comment.new(patch.hash, [severity, message].compact.join(': '), patch.file, position)
             end
           end
           comments
