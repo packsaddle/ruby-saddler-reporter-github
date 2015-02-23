@@ -45,7 +45,7 @@ module Saddler
 
               severity = error['@severity'] && error['@severity'].upcase
               message = error['@message']
-              position = patch.changed_lines.detect { |line| line.number == line_no }.patch_position
+              position = patch.find_patch_position_by_line_number(line_no)
 
               comments << Comment.new(sha, [severity, message].compact.join(': '), patch.file, position)
             end
