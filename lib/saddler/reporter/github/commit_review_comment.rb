@@ -26,7 +26,9 @@ module Saddler
           posting_comments = comments - commit_comments
           return if posting_comments.empty?
           # create commit_comment
-          client.create_commit_comment(posting_comments)
+          posting_comments.each do |posting|
+            client.create_commit_comment(posting)
+          end
         end
 
         def build_comments(data, client, sha)
