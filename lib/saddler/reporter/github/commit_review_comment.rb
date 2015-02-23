@@ -33,8 +33,10 @@ module Saddler
           patches = client.commit_patches(sha)
           comments = []
           files = data['checkstyle']['file'] ||= []
+          files = [files] if files.kind_of?(Hash)
           files.each do |file|
             errors = file['error'] ||= []
+            errors = [file['error']] if errors.kind_of?(Hash)
             file_name = file['@name'] ||= ''
             patch = patches.find_patch_by_file(file_relative_path_string(file_name))
             next unless patch
