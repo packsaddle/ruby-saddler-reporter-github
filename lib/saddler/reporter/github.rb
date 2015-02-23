@@ -1,6 +1,7 @@
 require 'nori'
 require 'octokit'
 require 'git'
+require 'git_diff_parser'
 require 'saddler/reporter/github/version'
 require 'saddler/reporter/github/support'
 require 'saddler/reporter/github/helper'

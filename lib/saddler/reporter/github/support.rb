@@ -1,3 +1,5 @@
+require 'pathname'
+
 module Saddler
   module Reporter
     module Github
@@ -34,6 +36,14 @@ module Saddler
           Nori
             .new(parser: :rexml)
             .parse(xml)
+        end
+
+        def file_relative_path_string(file_name)
+          if Pathname.new(file_name).absolute?
+            Pathname.new(file_name).relative_path_from(Pathname.new(Dir.pwd)).to_s
+          else
+            Pathname.new(file_name).relative_path_from(Pathname.new('.')).to_s
+          end
         end
       end
     end

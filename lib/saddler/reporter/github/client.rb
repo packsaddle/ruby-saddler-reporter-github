@@ -17,6 +17,14 @@ module Saddler
                                        comment.path, nil, comment.position)
         end
 
+        def commit_patches(sha)
+          patches = ::GitDiffParser::Patches[]
+          client.commit(slug, sha).files.each do |file|
+            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: sha)
+          end
+          patches
+        end
+
         def issue_comments
           client.issue_comments(slug, pull_id).map do |comment|
             Comment.new(sha = nil, comment.body, comment.path, comment.position)
