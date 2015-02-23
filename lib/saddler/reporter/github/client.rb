@@ -20,7 +20,7 @@ module Saddler
         def commit_patches(sha)
           patches = ::GitDiffParser::Patches[]
           client.commit(slug, sha).files.each do |file|
-            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, hash: sha)
+            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: sha)
           end
           patches
         end
