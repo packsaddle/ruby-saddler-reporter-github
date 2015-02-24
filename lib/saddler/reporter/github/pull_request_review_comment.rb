@@ -18,7 +18,7 @@ module Saddler
           patches = client.pull_request_patches
 
           # build comment
-          comments = build_comments(data, patches)
+          comments = build_comments_with_patches(data, patches)
           return if comments.empty?
 
           posting_comments = comments - pull_request_review_comments
@@ -28,10 +28,6 @@ module Saddler
           posting_comments.each do |posting|
             client.create_pull_request_review_comment(posting)
           end
-        end
-
-        def build_comments(data, patches)
-          []
         end
       end
     end
