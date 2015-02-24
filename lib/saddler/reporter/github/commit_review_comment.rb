@@ -19,8 +19,9 @@ module Saddler
           # fetch commit_comments
           commit_comments = client.commit_comments(sha)
 
+          patches = client.commit_patches(sha)
           # build comment
-          comments = build_comments(data, client, sha)
+          comments = build_comments(data, patches)
           return if comments.empty?
 
           posting_comments = comments - commit_comments
@@ -31,8 +32,7 @@ module Saddler
           end
         end
 
-        def build_comments(data, client, sha)
-          patches = client.commit_patches(sha)
+        def build_comments(data, patches)
           comments = []
           files = data['checkstyle']['file'] ||= []
           files = [files] if files.kind_of?(Hash)
