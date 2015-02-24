@@ -8,7 +8,7 @@ module Saddler
         # https://developer.github.com/v3/pulls/comments/#create-a-comment
         def report(messages, _options)
           repo_path = '.'
-          repo = GitRepository.new(repo_path)
+          repo = ::Saddler::Reporter::Support::Git::Repository.new(repo_path)
 
           data = parse(messages)
           client = Client.new(repo)
