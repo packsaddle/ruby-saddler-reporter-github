@@ -2,7 +2,7 @@ module Saddler
   module Reporter
     module Github
       class PullRequestComment
-        include Support
+        include ::Saddler::Reporter::Support
         include Helper
 
         # https://developer.github.com/v3/issues/comments/#create-a-comment
