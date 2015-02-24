@@ -2,7 +2,7 @@ module Saddler
   module Reporter
     module Github
       class CommitComment
-        include Support
+        include ::Saddler::Reporter::Support
         include Helper
 
         # https://developer.github.com/v3/repos/comments/#create-a-commit-comment
