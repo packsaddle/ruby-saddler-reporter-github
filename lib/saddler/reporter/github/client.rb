@@ -56,7 +56,7 @@ module Saddler
 
         def pull_id
           @pull_id ||= begin
-            pull_id = ENV['PULL_REQUEST_ID']
+            pull_id = env_pull_id
             if pull_id
               pull_id.to_i
             elsif @repo.current_branch
@@ -80,6 +80,14 @@ module Saddler
 
         def access_token
           ENV['GITHUB_ACCESS_TOKEN']
+        end
+
+        def env_pull_id
+          if ENV['PULL_REQUEST_ID']
+            ENV['PULL_REQUEST_ID']
+          elsif ENV['TRAVIS_PULL_REQUEST'] && ENV['TRAVIS_PULL_REQUEST'] != 'false'
+            ENV['TRAVIS_PULL_REQUEST']
+          end
         end
       end
     end
