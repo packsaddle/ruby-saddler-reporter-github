@@ -13,14 +13,15 @@ module Saddler
           sha = options['sha'] || repo.head.sha
           data = parse(messages)
 
-          # build comment
-          body = concat_body(data)
-          return if body.empty?
-          comment = Comment.new(sha, body, nil, nil)
-
           client = Client.new(repo)
           # fetch commit_comments
           commit_comments = client.commit_comments(sha)
+
+          # build comment
+          body = concat_body(data)
+          return if body.empty?
+          comment = Comment.new(sha, body, path = nil, position = nil)
+
           # compare commit_comments.include?(comment)
           return if commit_comments.include?(comment)
           # create commit_comment
