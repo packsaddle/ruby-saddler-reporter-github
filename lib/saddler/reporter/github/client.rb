@@ -35,6 +35,25 @@ module Saddler
           client.add_comment(slug, pull_id, comment.body)
         end
 
+        def pull_request_review_comments
+          client.pull_request_comments(slug, pull_id).map do |comment|
+            Comment.new(comment.commit_id, comment.body, comment.path, comment.position)
+          end
+        end
+
+        def pull_request_patches
+          patches = ::GitDiffParser::Patches[]
+          client.pull_request_files(slug, pull_id).each do |file|
+            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: @repo.head.sha)
+          end
+          patches
+        end
+
+        def create_pull_request_review_comment(comment)
+          client.create_pull_request_comment(slug, pull_id, comment.body,
+                                             comment.sha, comment.path, comment.position)
+        end
+
         def pull_id
           @pull_id ||= begin
             pull_id = ENV['PULL_REQUEST_ID']
