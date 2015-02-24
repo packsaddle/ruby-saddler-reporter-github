@@ -21,7 +21,6 @@ module Saddler
           return if body.empty?
           comment = Comment.new(sha1 = nil, body, path = nil, position = nil)
 
-
           # compare pull_request_comments.include?(comment)
           return if pull_request_comments.include?(comment)
           # create pull_request_comment
