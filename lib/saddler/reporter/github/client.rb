@@ -44,7 +44,7 @@ module Saddler
         def pull_request_patches
           patches = ::GitDiffParser::Patches[]
           client.pull_request_files(slug, pull_id).each do |file|
-            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: @repo.head.sha)
+            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: @repo.merging_sha)
           end
           patches
         end
