@@ -22,6 +22,23 @@ $ saddler report \
 
 like this.
 
+## Requirement
+
+Set `GITHUB_ACCESS_TOKEN=__your_access_token__` to your environment variable.
+
+### TravisCI
+
+[Travis CI: Encryption keys](http://docs.travis-ci.com/user/encryption-keys/)
+
+```bash
+$ gem install travis
+$ travis encrypt -r <owner_name>/<repos_name> "GITHUB_ACCESS_TOKEN=<github_token>"
+```
+
+### CircleCI
+
+[Environment variables - CircleCI](https://circleci.com/docs/environment-variables)
+
 ## Installation
 
 Add this line to your application's Gemfile:
