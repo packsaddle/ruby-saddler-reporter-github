@@ -7,10 +7,10 @@
 
 This provides saddler reporters for GitHub.
 
-* CommitComment(under construction)
-* CommitReviewComment(under construction)
 * PullRequestComment
 * PullRequestReviewComment
+* CommitComment(under construction)
+* CommitReviewComment(under construction)
 
 ## Usage
 
