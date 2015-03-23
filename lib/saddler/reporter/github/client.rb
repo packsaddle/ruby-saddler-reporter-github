@@ -87,6 +87,8 @@ module Saddler
             ENV['PULL_REQUEST_ID'].to_i
           elsif ENV['TRAVIS_PULL_REQUEST'] && ENV['TRAVIS_PULL_REQUEST'] != 'false'
             ENV['TRAVIS_PULL_REQUEST'].to_i
+          elsif ENV['CIRCLE_PR_NUMBER']
+            ENV['CIRCLE_PR_NUMBER'].to_i
           end
         end
       end
