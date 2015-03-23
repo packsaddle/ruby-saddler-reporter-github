@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var execSync = require('child_process').execSync;
+var conventionalChangelog = require('conventional-changelog');
+
+var version = "" + execSync('ruby -e \'require "./lib/saddler/reporter/github/version"; print Saddler::Reporter::Github::VERSION\'');
+
+conventionalChangelog({
+  repository: 'https://github.com/packsaddle/ruby-saddler-reporter-github',
+  version: version
+}, function(err, log) {
+  fs.writeFile('CHANGELOG.md', log, function(err){
+    console.log(err);
+  });
+  console.log('Here is your changelog!', log);
+});
