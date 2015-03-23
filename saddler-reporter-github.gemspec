@@ -22,7 +22,8 @@ Gem::Specification.new do |spec|
         [
           '.travis.yml',
           'circle.yml',
-          '.tachikoma.yml'
+          '.tachikoma.yml',
+          'package.json'
         ].include?(f)
       end
   spec.bindir        = 'exe'
