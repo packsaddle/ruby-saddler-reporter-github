@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "conventional-changelog": "0.0.16"
+  },
+  "scripts": {
+    "changelog": "bin/conventional-changelog"
   }
 }
