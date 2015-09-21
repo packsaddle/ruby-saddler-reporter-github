@@ -3,15 +3,33 @@
 var fs = require('fs');
 var execSync = require('child_process').execSync;
 var conventionalChangelog = require('conventional-changelog');
+var tempfile = require('tempfile');
+var addStream = require('add-stream');
 
 var version = "" + execSync('ruby -e \'require "./lib/saddler/reporter/github/version"; print Saddler::Reporter::Github::VERSION\'');
 
-conventionalChangelog({
-  repository: 'https://github.com/packsaddle/ruby-saddler-reporter-github',
-  version: version
-}, function(err, log) {
-  fs.writeFile('CHANGELOG.md', log, function(err){
-    console.log(err);
+var options = { preset: 'angular' };
+var templateContext = {
+  version: version,
+  host: 'https://github.com',
+  owner: 'packsaddle',
+  repository: 'ruby-saddler-reporter-github'
+};
+var infile = 'CHANGELOG.md';
+var outfile = 'CHANGELOG.md';
+var changelogStream = conventionalChangelog(options, templateContext)
+  .on('error', function(err) {
+    console.error(err.toString());
+    process.exit(1);
   });
-  console.log('Here is your changelog!', log);
-});
+
+var tmp = tempfile();
+var readStream = fs.createReadStream(infile);
+
+changelogStream
+  .pipe(addStream(readStream))
+  .pipe(fs.createWriteStream(tmp))
+  .on('finish', function() {
+    fs.createReadStream(tmp)
+      .pipe(fs.createWriteStream(outfile));
+  });
