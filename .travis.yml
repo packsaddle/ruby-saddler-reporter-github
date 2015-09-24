@@ -1,15 +1,18 @@
-language: ruby
+language: "ruby"
 sudo: false
 rvm:
-  - 1.9
-  - 2.0
-  - 2.1
-  - 2.2
+  - "1.9"
+  - "2.0"
+  - "2.1"
+  - "2.2"
+  - "ruby-head"
+matrix:
+  allow_failures:
+    - rvm: "ruby-head"
 before_install:
-  - gem update bundler
+  - "gem update bundler"
+  - "bin/setup"
+#script: "bundle exec rubocop && rake"
 notifications:
   email:
     - ogataken@gmail.com
-branches:
-  only:
-    - master
