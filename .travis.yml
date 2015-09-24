@@ -12,7 +12,7 @@ matrix:
 before_install:
   - "gem update bundler"
   - "bin/setup"
-script: "bundle exec rubocop && rake"
+#script: "bundle exec rubocop && rake"
 notifications:
   email:
     - ogataken@gmail.com
