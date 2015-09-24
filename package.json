@@ -1,10 +1,10 @@
 {
   "devDependencies": {
-    "add-stream": "^1.0.0",
     "conventional-changelog": "0.4.3",
-    "tempfile": "^1.1.1"
+    "npm-check-updates": "^2.2.3"
   },
   "scripts": {
-    "changelog": "bin/conventional-changelog"
+    "changelog": "bin/conventional-changelog",
+    "ncu": "ncu -u"
   }
 }
