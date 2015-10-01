@@ -19,7 +19,11 @@ module Saddler
           # build comment
           body = concat_body(data)
           return if body.empty?
-          comment = Comment.new(sha1 = nil, body, path = nil, position = nil)
+
+          sha = nil
+          path = nil
+          position = nil
+          comment = Comment.new(sha, body, path, position)
 
           # compare pull_request_comments.include?(comment)
           return if pull_request_comments.include?(comment)

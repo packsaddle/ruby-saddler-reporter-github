@@ -27,7 +27,8 @@ module Saddler
 
         def issue_comments
           client.issue_comments(slug, pull_id).map do |comment|
-            Comment.new(sha = nil, comment.body, comment.path, comment.position)
+            sha = nil
+            Comment.new(sha, comment.body, comment.path, comment.position)
           end
         end
 
