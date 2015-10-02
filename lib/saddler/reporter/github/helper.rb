@@ -1,7 +1,13 @@
 module Saddler
   module Reporter
     module Github
+      # Helper for saddler-reporter-github
       module Helper
+        # Concatenate parsed errors
+        #
+        # @param data [Object] parsed checkstyle data
+        #
+        # @return [String] concatenated errors. separated with new line.
         def concat_body(data)
           buffer = []
           files = data['checkstyle']['file'] ||= []
@@ -18,6 +24,12 @@ module Saddler
           buffer.join("\n")
         end
 
+        # Build comment objects by parsed errors and patches
+        #
+        # @param data [Object] parsed checkstyle data
+        # @param patches [Patches<Patch>] `git diff`'s patch section
+        #
+        # @return [Array<Comment>] comment objects
         def build_comments_with_patches(data, patches)
           comments = []
           files = data['checkstyle']['file'] ||= []
