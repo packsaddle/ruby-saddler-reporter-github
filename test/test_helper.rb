@@ -6,7 +6,8 @@ module Saddler
       class TestHelper < Test::Unit::TestCase
         target = Class.new do
           include Helper
-        end.new
+          include ::Saddler::Reporter::Support
+        end.new('')
 
         one_file_one_error = {
           'checkstyle' => {
@@ -121,6 +122,30 @@ INFO: Method has too many lines. [14/10]
             expected.chomp!
             assert do
               target.concat_body(two_files_multi_errors) == expected
+            end
+          end
+        end
+
+        sub_test_case '#build_comments_with_patches' do
+          test 'one file one error' do
+            checkstyle = File.read('./test/fixtures/one_file_one_error.xml')
+            data = target.parse(checkstyle)
+            diff = File.read('./test/fixtures/a2f967a..fdeaddd.diff')
+            patches = ::GitDiffParser::Patches.parse(diff)
+            comments = []
+            comments << Comment.new(nil, 'INFO: Line is too long. [164/120]', 'lib/example/travis_ci.rb', 5)
+            assert do
+              target.build_comments_with_patches(data, patches) == comments
+            end
+          end
+          test 'one file no error' do
+            checkstyle = File.read('./test/fixtures/one_file_no_error.xml')
+            data = target.parse(checkstyle)
+            diff = File.read('./test/fixtures/a2f967a..2a382c8.diff')
+            patches = ::GitDiffParser::Patches.parse(diff)
+            comments = []
+            assert do
+              target.build_comments_with_patches(data, patches) == comments
             end
           end
         end

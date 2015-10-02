@@ -1,0 +1,6 @@
+<?xml version='1.0'?>
+<checkstyle>
+  <file name='lib/example/travis_ci.rb'>
+    
+  </file>
+</checkstyle>

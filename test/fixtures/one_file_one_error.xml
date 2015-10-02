@@ -1,0 +1,6 @@
+<?xml version='1.0'?>
+<checkstyle>
+  <file name='lib/example/travis_ci.rb'>
+    <error column='120' line='7' message='Line is too long. [164/120]' severity='info' source='com.puppycrawl.tools.checkstyle.Metrics/LineLength'/>
+  </file>
+</checkstyle>

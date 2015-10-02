@@ -1,0 +1,13 @@
+diff --git a/lib/example/travis_ci.rb b/lib/example/travis_ci.rb
+index a2f967a..fdeaddd 100644
+--- a/lib/example/travis_ci.rb
++++ b/lib/example/travis_ci.rb
+@@ -4,7 +4,7 @@ module Example
+   module TravisCi
+     # Your code goes here...
+     def too_long
+-      'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
++      'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+     end
+   end
+ end
