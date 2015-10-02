@@ -5,7 +5,12 @@ module Saddler
         include ::Saddler::Reporter::Support
         include Helper
 
-        # https://developer.github.com/v3/pulls/comments/#create-a-comment
+        # @param messages [String] checkstyle string
+        # @param _options [Hash]
+        #
+        # @return [void]
+        #
+        # @see https://developer.github.com/v3/pulls/comments/#create-a-comment
         def report(messages, _options)
           repo_path = '.'
           repo = ::Saddler::Reporter::Support::Git::Repository.new(repo_path)

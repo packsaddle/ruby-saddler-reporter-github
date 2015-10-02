@@ -14,6 +14,7 @@ require 'saddler/reporter/github/pull_request_review_comment'
 module Saddler
   module Reporter
     class ArgumentError < StandardError; end
+    # Saddler reporter for GitHub.
     module Github
       class InvalidParameterError < ::Saddler::Reporter::ArgumentError; end
     end

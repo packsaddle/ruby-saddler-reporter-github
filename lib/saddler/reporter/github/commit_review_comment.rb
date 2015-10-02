@@ -7,7 +7,13 @@ module Saddler
         include ::Saddler::Reporter::Support
         include Helper
 
-        # https://developer.github.com/v3/repos/comments/#create-a-commit-comment
+        # @param messages [String] checkstyle string
+        # @param options [Hash]
+        # @option options [String] sha target commit sha
+        #
+        # @return [void]
+        #
+        # @see https://developer.github.com/v3/repos/comments/#create-a-commit-comment
         def report(messages, options)
           repo_path = '.'
           repo = ::Saddler::Reporter::Support::Git::Repository.new(repo_path)
