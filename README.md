@@ -1,7 +1,8 @@
 # Saddler::Reporter::Github
 
-[![Gem Version](http://img.shields.io/gem/v/saddler-reporter-github.svg?style=flat)](http://badge.fury.io/rb/saddler-reporter-github)
-[![Build Status](http://img.shields.io/travis/packsaddle/ruby-saddler-reporter-github/master.svg?style=flat)](https://travis-ci.org/packsaddle/ruby-saddler-reporter-github)
+[![Gem version][gem-image]][gem-url] [![Travis-CI Status][travis-image]][travis-url] [![yard docs][docs-image]][docs-url]
+
+> [Saddler](https://github.com/packsaddle/ruby-saddler) reporter for GitHub.
 
 
 ## Reporters
@@ -9,9 +10,17 @@
 This provides saddler reporters for GitHub.
 
 * PullRequestComment
+    * `--require saddler/reporter/github`
+    * `--reporter Saddler::Reporter::Github::PullRequestComment`
 * PullRequestReviewComment
-* CommitComment(under construction)
-* CommitReviewComment(under construction)
+    * `--require saddler/reporter/github`
+    * `--reporter Saddler::Reporter::Github::PullRequestReviewComment`
+* CommitComment (_under construction_)
+    * `--require saddler/reporter/github`
+    * `--reporter Saddler::Reporter::Github::CommitComment`
+* CommitReviewComment (_under construction_)
+    * `--require saddler/reporter/github`
+    * `--reporter Saddler::Reporter::Github::CommitReviewComment`
 
 
 ## Usage
@@ -22,7 +31,7 @@ $ saddler report \
    --reporter Saddler::Reporter::Github::PullRequestReviewComment
 ```
 
-like this.
+like this. See [Saddler](https://github.com/packsaddle/ruby-saddler).
 
 
 ## Requirement
@@ -43,6 +52,16 @@ $ travis encrypt -r <owner_name>/<repos_name> "GITHUB_ACCESS_TOKEN=<github_token
 ### CircleCI
 
 [Environment variables - CircleCI](https://circleci.com/docs/environment-variables)
+
+
+## API
+
+*[details][docs-url]*.
+
+
+## Changelog
+
+[CHANGELOG.md](./CHANGELOG.md).
 
 
 ## Installation
@@ -76,3 +95,17 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+## License
+
+© [sanemat](http://sane.jp)
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+[travis-url]: https://travis-ci.org/packsaddle/ruby-saddler-reporter-github
+[travis-image]: https://img.shields.io/travis/packsaddle/ruby-saddler-reporter-github/master.svg?style=flat-square&label=build%20%28linux%29
+[gem-url]: https://rubygems.org/gems/saddler-reporter-github
+[gem-image]: http://img.shields.io/gem/v/saddler-reporter-github.svg?style=flat-square
+[docs-url]: http://www.rubydoc.info/gems/saddler-reporter-github
+[docs-image]: https://img.shields.io/badge/yard-docs-blue.svg?style=flat-square
