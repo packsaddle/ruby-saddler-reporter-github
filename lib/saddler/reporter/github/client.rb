@@ -3,7 +3,7 @@ module Saddler
     module Github
       # GitHub client wrapper
       class Client
-        # @param repo [::Saddler::Reporter::Support::Git::Repository] git repository
+        # @param repo [Repository] git repository
         def initialize(repo)
           @repo = repo
         end
@@ -29,11 +29,11 @@ module Saddler
 
         # @param sha [String] target commit sha
         #
-        # @return [::GitDiffParser::Patches<::GitDiffParser::Patch>] patches
+        # @return [Patches<Patch>] patches
         def commit_patches(sha)
-          patches = ::GitDiffParser::Patches[]
+          patches = Patches.new
           client.commit(slug, sha).files.each do |file|
-            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: sha)
+            patches << Patch.new(file.patch, file: file.filename, secure_hash: sha)
           end
           patches
         end
@@ -62,11 +62,11 @@ module Saddler
           end
         end
 
-        # @return [::GitDiffParser::Patches<::GitDiffParser::Patch>] patches
+        # @return [Patches<Patch>] patches
         def pull_request_patches
-          patches = ::GitDiffParser::Patches[]
+          patches = Patches.new
           client.pull_request_files(slug, pull_id).each do |file|
-            patches << ::GitDiffParser::Patch.new(file.patch, file: file.filename, secure_hash: @repo.merging_sha)
+            patches << Patch.new(file.patch, file: file.filename, secure_hash: @repo.merging_sha)
           end
           patches
         end

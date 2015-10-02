@@ -16,7 +16,7 @@ module Saddler
         # @see https://developer.github.com/v3/repos/comments/#create-a-commit-comment
         def report(messages, options)
           repo_path = '.'
-          repo = ::Saddler::Reporter::Support::Git::Repository.new(repo_path)
+          repo = Repository.new(repo_path)
 
           sha = options['sha'] || repo.head.sha
           data = parse(messages)
