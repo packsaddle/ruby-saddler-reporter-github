@@ -3,7 +3,7 @@ module Saddler
     module Github
       # GitHub client wrapper
       class Client
-        # @param repo [::Saddler::Reporter::Support::Git::Repository] git repository
+        # @param repo [Repository] git repository
         def initialize(repo)
           @repo = repo
         end
