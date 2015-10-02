@@ -131,7 +131,7 @@ INFO: Method has too many lines. [14/10]
             checkstyle = File.read('./test/fixtures/one_file_one_error.xml')
             data = target.parse(checkstyle)
             diff = File.read('./test/fixtures/a2f967a..fdeaddd.diff')
-            patches = ::GitDiffParser.parse(diff)
+            patches = ::GitDiffParser::Patches.parse(diff)
             comments = []
             comments << Comment.new(nil, 'INFO: Line is too long. [164/120]', 'lib/example/travis_ci.rb', 5)
             assert do
@@ -142,7 +142,7 @@ INFO: Method has too many lines. [14/10]
             checkstyle = File.read('./test/fixtures/one_file_no_error.xml')
             data = target.parse(checkstyle)
             diff = File.read('./test/fixtures/a2f967a..2a382c8.diff')
-            patches = ::GitDiffParser.parse(diff)
+            patches = ::GitDiffParser::Patches.parse(diff)
             comments = []
             assert do
               target.build_comments_with_patches(data, patches) == comments
