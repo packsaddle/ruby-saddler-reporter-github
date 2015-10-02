@@ -138,6 +138,16 @@ INFO: Method has too many lines. [14/10]
               target.build_comments_with_patches(data, patches) == comments
             end
           end
+          test 'one file no error' do
+            checkstyle = File.read('./test/fixtures/one_file_no_error.xml')
+            data = target.parse(checkstyle)
+            diff = File.read('./test/fixtures/a2f967a..2a382c8.diff')
+            patches = ::GitDiffParser.parse(diff)
+            comments = []
+            assert do
+              target.build_comments_with_patches(data, patches) == comments
+            end
+          end
         end
       end
     end
