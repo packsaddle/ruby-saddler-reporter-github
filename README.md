@@ -59,6 +59,17 @@ $ travis encrypt -r <owner_name>/<repos_name> "GITHUB_ACCESS_TOKEN=<github_token
 *[details][docs-url]*.
 
 
+## For GitHub Enterprise
+
+Put your api endpoint url into environment variable `OCTOKIT_API_ENDPOINT`.
+
+```
+$ OCTOKIT_API_ENDPOINT='http://yourhostname.example.com/api/v3/' saddler report --require saddler/reporter/github --reporter ...
+```
+
+See: [Using ENV variables](https://github.com/octokit/octokit.rb#using-env-variables)
+
+
 ## Changelog
 
 [CHANGELOG.md](./CHANGELOG.md).
