@@ -83,13 +83,19 @@ module Saddler
 
         # @return [Integer, nil] pull request id
         def pull_id
-          @pull_id ||= begin
-            pull_id = env_pull_id
-            if pull_id
-              pull_id.to_i
-            elsif @repo.current_branch
-              pull = pull_requests.find { |pr| pr[:head][:ref] == @repo.current_branch }
-              pull[:number].to_i if pull
+          return @pull_id unless @pull_id.nil?
+
+          local_pull_id = env_pull_id
+          if local_pull_id
+            @pull_id = local_pull_id
+            return @pull_id
+          end
+
+          if @repo.current_branch
+            pull = pull_requests.find { |pr| pr[:head][:ref] == @repo.current_branch }
+            if pull
+              @pull_id = pull[:number].to_i
+              return @pull_id
             end
           end
         end
