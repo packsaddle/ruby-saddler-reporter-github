@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'git_diff_parser', '>= 2.0', '< 3.0'
   spec.add_runtime_dependency 'saddler-reporter-support', '>= 0.1', '< 0.2'
   spec.add_runtime_dependency 'saddler-reporter-support-git', '>= 0.3', '< 0.4'
+  spec.add_runtime_dependency 'env_pull_request', '>= 0'
 
   spec.add_development_dependency 'bundler', '>= 0'
   spec.add_development_dependency 'rake', '>= 0'

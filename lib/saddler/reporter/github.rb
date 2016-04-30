@@ -1,5 +1,6 @@
 require 'octokit'
 require 'git_diff_parser'
+require 'env_pull_request'
 require 'saddler/reporter/support'
 require 'saddler/reporter/support/git'
 require 'saddler/reporter/github/version'
