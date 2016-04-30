@@ -118,15 +118,8 @@ module Saddler
 
         # @return [Integer, nil] pull request id from environment variables
         def env_pull_id
-          if ENV['PULL_REQUEST_ID']
-            ENV['PULL_REQUEST_ID'].to_i
-          elsif ENV['TRAVIS_PULL_REQUEST'] && ENV['TRAVIS_PULL_REQUEST'] != 'false'
-            ENV['TRAVIS_PULL_REQUEST'].to_i
-          elsif ENV['CIRCLE_PR_NUMBER']
-            ENV['CIRCLE_PR_NUMBER'].to_i
-          elsif ENV['ghprbPullId']
-            ENV['ghprbPullId'].to_i
-          end
+          env_pull = EnvPullRequest.new
+          env_pull.pull_request_id
         end
       end
     end
