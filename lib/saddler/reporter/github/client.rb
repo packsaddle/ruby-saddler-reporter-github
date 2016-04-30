@@ -85,9 +85,8 @@ module Saddler
         def pull_id
           return @pull_id unless @pull_id.nil?
 
-          local_pull_id = env_pull_id
-          if local_pull_id
-            @pull_id = local_pull_id
+          if env_pull_id
+            @pull_id = env_pull_id
             return @pull_id
           end
 
@@ -124,8 +123,7 @@ module Saddler
 
         # @return [Integer, nil] pull request id from environment variables
         def env_pull_id
-          env_pull = EnvPullRequest.new
-          env_pull.pull_request_id
+          @env_pull_id ||= EnvPullRequest.new.pull_request_id
         end
       end
     end
