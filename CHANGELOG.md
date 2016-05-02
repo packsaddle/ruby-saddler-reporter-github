@@ -1,3 +1,9 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v0.4.0...v1.0.0) (2016-05-02)
+
+* Ship v1.0.0
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v0.3.0...v0.4.0) (2016-05-02)
 
