@@ -1,3 +1,9 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v1.0.0...v2.0.0) (2017-01-15)
+
+* Drop support for ruby 1.9
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v0.4.0...v1.0.0) (2016-05-02)
 
