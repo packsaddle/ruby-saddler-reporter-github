@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Saddler reporter for GitHub.'
   spec.homepage      = 'https://github.com/packsaddle/ruby-saddler-reporter-github'
   spec.license       = 'MIT'
+  spec.required_ruby_version = '>= 2.0'
 
   spec.files         = \
     `git ls-files -z`
