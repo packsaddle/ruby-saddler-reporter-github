@@ -6,6 +6,10 @@ module Saddler
         # @param repo [Repository] git repository
         def initialize(repo)
           @repo = repo
+
+          Octokit.configure do |c|
+            c.api_endpoint = "#{ENV["GITHUB_HOSTNAME"]}/api/v3/" if ENV["GITHUB_HOSTNAME"]
+          end
         end
 
         # @param sha [String] target commit sha
