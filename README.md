@@ -1,6 +1,6 @@
 # Saddler::Reporter::Github
 
-[![Gem version][gem-image]][gem-url] [![Travis-CI Status][travis-image]][travis-url] [![yard docs][docs-image]][docs-url]
+[![Gem version][gem-image]][gem-url] [![CI Status][ci-image]][ci-url] [![yard docs][docs-image]][docs-url]
 
 > [Saddler](https://github.com/packsaddle/ruby-saddler) reporter for GitHub.
 
@@ -114,8 +114,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-[travis-url]: https://travis-ci.org/packsaddle/ruby-saddler-reporter-github
-[travis-image]: https://img.shields.io/travis/packsaddle/ruby-saddler-reporter-github/master.svg?style=flat-square&label=build%20%28linux%29
+[ci-url]: https://circleci.com/gh/packsaddle/ruby-saddler-reporter-github
+[ci-image]: https://img.shields.io/circleci/build/github/packsaddle/ruby-saddler-reporter-github?style=flat-square
 [gem-url]: https://rubygems.org/gems/saddler-reporter-github
 [gem-image]: http://img.shields.io/gem/v/saddler-reporter-github.svg?style=flat-square
 [docs-url]: http://www.rubydoc.info/gems/saddler-reporter-github
