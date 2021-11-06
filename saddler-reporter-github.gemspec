@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'octokit', '>= 0'
-  spec.add_runtime_dependency 'git_diff_parser', '>= 2.0', '< 3.0'
+  spec.add_runtime_dependency 'git_diff_parser', '>= 2.0', '< 5.0'
   spec.add_runtime_dependency 'saddler-reporter-support', '>= 1.0'
   spec.add_runtime_dependency 'saddler-reporter-support-git', '>= 1.0'
   spec.add_runtime_dependency 'env_pull_request', '>= 1.0'
