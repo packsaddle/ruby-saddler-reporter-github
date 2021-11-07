@@ -1,3 +1,8 @@
+# [2.1.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v2.0.0...v2.1.0) (2021-11-07)
+
+* Relax git_diff_parser version
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v1.0.0...v2.0.0) (2017-01-15)
 
