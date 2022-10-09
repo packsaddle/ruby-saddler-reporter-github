@@ -35,7 +35,7 @@ like this. See [Saddler](https://github.com/packsaddle/ruby-saddler).
 
 ## Debugging
 
-You can use `reporter-github-log_octokit` option.
+You can use `reporter-github-log_octokit` option to log octokit's requests and responses.
 
 ```
 $ saddler report \
