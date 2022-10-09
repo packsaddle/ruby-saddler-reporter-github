@@ -33,6 +33,16 @@ $ saddler report \
 
 like this. See [Saddler](https://github.com/packsaddle/ruby-saddler).
 
+## Debugging
+
+You can use `reporter-github-log_octokit` option.
+
+```
+$ saddler report \
+   --require saddler/reporter/github \
+   --reporter Saddler::Reporter::Github::PullRequestReviewComment \
+   --options 'reporter-github-log_octokit:true'
+```
 
 ## Requirement
 

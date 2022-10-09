@@ -118,7 +118,6 @@ module Saddler
           @client ||= if @log_octokit
                         # see: https://github.com/octokit/octokit.rb/tree/v5.6.1#debugging
                         middleware = Faraday::RackBuilder.new do |builder|
-                          builder.use Faraday::Retry::Middleware, exceptions: [Octokit::ServerError] # or Faraday::Request::Retry for Faraday < 2.0
                           builder.use Octokit::Middleware::FollowRedirects
                           builder.use Octokit::Response::RaiseError
                           builder.use Octokit::Response::FeedParser
