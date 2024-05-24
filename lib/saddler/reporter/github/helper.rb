@@ -10,7 +10,7 @@ module Saddler
         # @return [String] concatenated errors. separated with new line.
         def concat_body(data)
           buffer = []
-          files = data['checkstyle']['file'] ||= []
+          files = data.dig('checkstyle', 'file') || []
           files = [files] if files.is_a?(Hash)
           files.each do |file|
             errors = file['error'] ||= []
@@ -32,7 +32,7 @@ module Saddler
         # @return [Array<Comment>] comment objects
         def build_comments_with_patches(data, patches)
           comments = []
-          files = data['checkstyle']['file'] ||= []
+          files = data.dig('checkstyle', 'file') || []
           files = [files] if files.is_a?(Hash)
           files.each do |file|
             errors = file['error'] ||= []
