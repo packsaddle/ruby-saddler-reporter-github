@@ -1,3 +1,7 @@
+## [2.1.1](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v2.1.0...v2.1.1) (2024-05-25)
+
+* **helper:** Use dig ([7c4de29](https://github.com/packsaddle/ruby-saddler-reporter-github/commit/7c4de29))
+
 # [2.1.0](https://github.com/packsaddle/ruby-saddler-reporter-github/compare/v2.0.0...v2.1.0) (2021-11-07)
 
 * Relax git_diff_parser version
