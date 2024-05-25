@@ -114,8 +114,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-[ci-url]: https://circleci.com/gh/packsaddle/ruby-saddler-reporter-github
-[ci-image]: https://img.shields.io/circleci/build/github/packsaddle/ruby-saddler-reporter-github?style=flat-square
+[ci-url]: https://github.com/packsaddle/ruby-saddler-reporter-github/actions/workflows/ci.yml
+[ci-image]: https://img.shields.io/github/actions/workflow/status/packsaddle/ruby-saddler-reporter-github/ci.yml?style=flat-square
 [gem-url]: https://rubygems.org/gems/saddler-reporter-github
 [gem-image]: http://img.shields.io/gem/v/saddler-reporter-github.svg?style=flat-square
 [docs-url]: http://www.rubydoc.info/gems/saddler-reporter-github
