@@ -19,7 +19,7 @@ module Saddler
           sha = options['sha'] || repo.head.sha
           data = parse(messages)
 
-          client = Client.new(repo)
+          client = Client.new(repo, log_octokit: options['reporter-github-log_octokit'])
           # fetch commit_comments
           commit_comments = client.commit_comments(sha)
 
